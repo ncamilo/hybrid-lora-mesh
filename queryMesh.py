@@ -8,11 +8,11 @@ from textwrap import wrap
 
 def main():
     """Instantiate a connection to the InfluxDB."""
-    host = '3.135.193.5'
+    host = 'IP'
     port = 8086
     user = 'admin'
-    password = 'nelson123'
-    dbname = 'loraserver'
+    password = 'password'
+    dbname = 'table'
     query = 'select time, value from device_frmpayload_data_dados where time > now() -5m'
 
     client = InfluxDBClient(host, port, user, password, dbname)
@@ -22,16 +22,12 @@ def main():
         result = client.query(query)
 
         for point in result.get_points():
-            #print(point)
-            jtopy=json.dumps(point) #json.dumps take a dictionary as input and returns a string as output.
-            dict_json=json.loads(jtopy) # json.loads take a string as input and returns a dictionary as output.
+            jtopy=json.dumps(point)
+            dict_json=json.loads(jtopy)
         
             dados = dict_json["value"]
             dadosInt = json.loads(dados)
         
-            #dadosDt = dadosInt["dt"]
-            #dadosDtdata = json.loads(dadosDt)
-            #print(dict_json["time"] + "\tnode: " + dadosInt["nd"] + "\tidMesh: " + dadosInt["dt"]["id"] + "\tseq: " + str(dadosInt["dt"]["sq"]) + "\tcount: " + str(dadosInt["dt"]["ct"]))
             time = dict_json["time"]
             node = dadosInt["nd"]
             if ("ts" in dadosInt):
@@ -55,9 +51,6 @@ def main():
             else:
                 rota = "65"
             rota = re.sub('[^A-Z0-9]+', '', rota)
-            #print(rota)
-            #rota = ''.join(list(set(wrap(rota, 2)))[-1::]) #set([x.strip() for x in re.findall('..?', rota)])
-            #print(rotaList)
             if ("tp" in  dadosInt["dt"]):
                 temp =  dadosInt["dt"]["tp"]
             else:
@@ -106,9 +99,6 @@ def main():
             print()
         
         sleep(10.00)
-
-
-
 
 if __name__ == '__main__':
     main()
