@@ -1,1 +1,1 @@
-# hybrid-lora-mesh
+# Hybrid LoRa Mesh
