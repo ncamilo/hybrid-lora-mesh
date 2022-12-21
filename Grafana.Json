@@ -416,7 +416,7 @@
         "payload": "{\"deviceQueueItem\":{\"confirmed\":false, \"data\":\"AQI=\", \"fPort\": 1}}",
         "text": "Reset command",
         "type": "header",
-        "url": "http://186.207.75.141:8080/api/devices/0d23d9237715eeac/queue",
+        "url": "/*API online to access*/",
         "variant": "primary"
       },
       "targets": [
