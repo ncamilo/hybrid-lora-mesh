@@ -410,7 +410,7 @@
           ],
           [
             "Authorization",
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5X2lkIjoiZTcwZjBiMGUtMjhjOC00NTAyLWFhMDQtYmJiNzYyNzYwMDM2IiwiYXVkIjoiYXMiLCJpc3MiOiJhcyIsIm5iZiI6MTY2MDYwOTk2Niwic3ViIjoiYXBpX2tleSJ9.FmhhFDkQ7gaWuZTAsfdHbWi3JzfnsZG5aHc3O46b16Q"
+            "Bearer Token"
           ]
         ],
         "payload": "{\"deviceQueueItem\":{\"confirmed\":false, \"data\":\"AQI=\", \"fPort\": 1}}",
